@@ -13,8 +13,4 @@ variable "vnet01_app_subnet"  { type = list(string) }
 locals {
   # Construct customer resource name value
   customer = "${var.environment}-${var.location}"
-
-  # Construct Azure tenancy name value
-  tenancy_name = (split(".",data.azuread_domains.aad_domains.domains[0].domain_name))[0]
-
 }
